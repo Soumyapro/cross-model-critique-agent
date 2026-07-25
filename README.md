@@ -8,14 +8,14 @@ A lightweight LangChain pipeline that pairs two different LLMs to answer, critiq
 
 Most LLM demos show a single model answering a single question. This project instead asks a narrower research-flavored question: can a second, independent model catch errors or overconfidence in a first model's reasoning, and does the resulting revision actually improve the answer?
 
-Using two different models, rather than calling the same model twice, matters here. A model critiquing its own output tends to agree with itself. A genuinely different model, trained differently, is more likely to catch something the first model missed — or, just as informative, to confirm the first model was right in a way that is not simply self-agreement.
+Using two different models, rather than calling the same model twice, matters here. A model critiquing its own output tends to agree with itself. A genuinely different model, trained differently, is more likely to catch something the first model missed - or, just as informative, to confirm the first model was right in a way that is not simply self-agreement.
 
 ## How it works
 
 The pipeline runs in three steps:
 
 1. **Answer.** The first model is given a question and asked to reason through it step by step, ending with a clearly marked final answer.
-2. **Critique.** A second model is shown the question and the first model's full answer, and is asked to evaluate the reasoning for errors, unstated assumptions, or gaps — not to solve the puzzle independently.
+2. **Critique.** A second model is shown the question and the first model's full answer, and is asked to evaluate the reasoning for errors, unstated assumptions, or gaps - not to solve the puzzle independently.
 3. **Revise.** The first model is shown its original answer and the critique, and is asked to revise the answer if the critique identified a real problem, or to explain why the critique does not apply if it does not hold up.
 
 All three outputs are shown in the interface, so the full reasoning trace is visible rather than just a final answer.
@@ -38,14 +38,6 @@ Each judged question is added to a running scoreboard for the session, tracking:
 - how often the final answer differed from the initial answer after critique
 
 This turns every use of the app into a small, live experiment rather than a single fixed demo.
-
-## Observations from testing
-
-Two examples from testing illustrate what this pipeline actually does, beyond simply working:
-
-**Ambiguity detection.** Given a puzzle about three friends and three pets, the first model produced one specific assignment of pets to people. The critique correctly identified that the puzzle's constraints do not uniquely determine that assignment — a second, equally valid assignment also satisfies every stated condition. On revision, the first model acknowledged the ambiguity rather than defending its original, overconfident answer. This is a case where self-correction improved the honesty of the answer, not just its factual correctness.
-
-**A failure case.** On a classic riddle involving five sisters and their activities, the critique step did trigger a revision, but the final answer was still judged incorrect. This is a useful negative result: the critique step changing an answer does not guarantee the revision is an improvement, and self-correction is not a reliable fix for every type of reasoning error, particularly riddles that depend on a specific lateral-thinking insight rather than straightforward logical deduction.
 
 ## Tech stack
 
