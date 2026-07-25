@@ -14,7 +14,7 @@ st.set_page_config(
 model_1_name = "Llama 3.1 8b instant"
 model_2_name = "Llama 3.3 70B Versatile"
 
-# custom css 
+# custom css
 st.markdown("""
 <style>
 .main .block-container {
@@ -44,6 +44,15 @@ div[data-testid="stExpander"] {
 # opening the questions.json file
 with open("eval/questions.json", "r", encoding="utf-8") as f:
     questions = json.load(f)
+
+
+# extracts just the final answer line, so comparisons aren't thrown off
+# by the model rephrasing its reasoning even when the conclusion is unchanged
+def extract_final_answer(text):
+    if "Final Answer:" in text:
+        return text.split("Final Answer:")[-1].strip()
+    return text.strip()
+
 
 # session state setup
 # used to keep the live scoreboard alive across reruns
@@ -160,7 +169,7 @@ if st.session_state.result:
         if correct_clicked or incorrect_clicked:
             verdict = "Correct" if correct_clicked else "Incorrect"
 
-            changed = result["answer"].strip() != result["revision"].strip()
+            changed = extract_final_answer(result["answer"]) != extract_final_answer(result["revision"])
 
             st.session_state.history.append({
                 "question": st.session_state.current_question,
