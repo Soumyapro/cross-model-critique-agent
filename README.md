@@ -85,7 +85,7 @@ This turns every use of the app into a small, live experiment rather than a sing
 
 ## Possible extensions
 
-- **Multi-round critique.** Currently the pipeline runs answer, critique, and revise exactly once. Allowing multiple rounds, stopping once the answer stabilizes, would more closely mirror iterative self-refinement approaches and would surface cases where an answer oscillates rather than converges.
-- **Confidence calibration.** Having the answering model state a confidence level alongside its initial answer, and comparing that confidence against the human judge's verdict, would give a direct measure of whether the model's stated confidence is well calibrated.
-- **Swappable model roles.** Letting the user choose which model plays which role would make it possible to compare, for example, how often a larger model catches errors in a smaller model's reasoning versus the reverse.
-- **LLM-as-judge.** For larger-scale testing beyond a live human-judged session, a third model call could serve as an automated grader against a fixed answer key, trading some rigor for the ability to run larger batches of questions unattended.
+- **Multi-round critique.** Right now the loop only runs once - answer, critique, revise, done. I'd like to let it keep going for a few rounds and stop once the answer stops changing. This would be closer to how real self-correction research works, and it would also show what happens when a model can't settle on an answer.
+- **Confidence score.** I originally planned this but dropped it to keep things simple. Adding it back would mean the model says how confident it is in its first answer, and then I can check whether that confidence actually matched what the human judge decided. That would tell me if the model knows when it's likely wrong.
+- **Switch model roles.** Right now one model always answers and the other always critiques. It would be interesting to let the user flip that - see what happens when the smaller model critiques the bigger one instead.
+- **Automatic grading.** Right now a human judges every answer, which works fine for a small demo but doesn't scale. A future version could use a third model as a judge, comparing the answer to a known correct one, so I could test on way more questions without sitting there clicking buttons the whole time.
