@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "category": "logic",
+    "question": "A father is 4 times as old as his son. In 20 years, he will be twice as old as his son. How old are they now?",
+    "answer": "Father is 40, son is 10"
+  },
+  {
+    "id": 2,
+    "category": "logic",
+    "question": "Three friends, Alex, Ben, and Carla, each own a different pet: a cat, a dog, and a fish. Alex does not own the cat. Ben does not own the dog or the fish. What pet does each person own?",
+    "answer": "Ben owns the cat, Alex owns the dog or fish, Carla owns the remaining one — specifically: Ben-cat, Alex-fish, Carla-dog"
+  },
+  {
+    "id": 3,
+    "category": "logic",
+    "question": "There are two doors. One leads to treasure, one leads to danger. Two guards stand at the doors: one always tells the truth, one always lies. You can ask one guard one question. What question do you ask to find the treasure door?",
+    "answer": "Ask either guard: 'What would the other guard say is the treasure door?' Then choose the opposite door."
+  },
+  {
+    "id": 4,
+    "category": "logic",
+    "question": "Five houses in a row are painted different colors. The green house is immediately to the left of the white house. The red house is at one end. If the order from left to right has the blue house in the middle, and green is not at either end, where could the green and white houses be?",
+    "answer": "Green house is in position 2 or 4 (with white immediately to its right), since it cannot be at either end (positions 1 or 5)"
+  },
+  {
+    "id": 5,
+    "category": "logic",
+    "question": "A man is looking at a photo. Someone asks him, 'Whose photo is that?' He replies, 'Brothers and sisters I have none, but this man's father is my father's son.' Whose photo is he looking at?",
+    "answer": "His own son"
+  },
+  {
+    "id": 6,
+    "category": "logic",
+    "question": "You have 8 identical-looking balls. One is slightly heavier than the rest. Using a balance scale only twice, how do you find the heavier ball?",
+    "answer": "Divide into three groups of 3,3,2. Weigh the two groups of 3 against each other. If balanced, the heavier ball is in the group of 2, weigh those two. If unbalanced, take the heavier group of 3, weigh two of those against each other."
+  },
+  {
+    "id": 7,
+    "category": "logic",
+    "question": "In a room there are three light switches outside a closed door. Only one controls a bulb inside the room. You can flip switches as much as you want, but can only enter the room once. How do you determine which switch controls the bulb?",
+    "answer": "Turn switch 1 on for a few minutes, then turn it off and turn switch 2 on. Enter the room: if the bulb is on, it's switch 2; if off but warm, it's switch 1; if off and cold, it's switch 3."
+  },
+  {
+    "id": 8,
+    "category": "logic",
+    "question": "Two people are born to the same mother and father, on the same day, at the same time, in the same month and year, but they are not twins. How is this possible?",
+    "answer": "They are two of a set of triplets (or more)"
+  },
+  {
+    "id": 9,
+    "category": "logic",
+    "question": "A farmer needs to cross a river with a wolf, a goat, and a cabbage. The boat only carries the farmer plus one item. If left alone together, the wolf eats the goat, or the goat eats the cabbage. How does he get everything across safely?",
+    "answer": "Take goat across, return alone, take wolf across, bring goat back, take cabbage across, return alone, take goat across"
+  },
+  {
+    "id": 10,
+    "category": "logic",
+    "question": "A woman shoots her husband, then holds him underwater for 5 minutes, then hangs him. Right after, they enjoy a lovely dinner together. How is this possible?",
+    "answer": "She is a photographer: she shot a photo of him, developed it underwater, then hung it up to dry"
+  }
+]
