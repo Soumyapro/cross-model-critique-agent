@@ -11,8 +11,8 @@ st.set_page_config(
 )
 
 # model names for display purposes
-model_1_name = "Llama 3.1 8b instant"
-model_2_name = "Llama 3.3 70B Versatile"
+model_1_name = "gpt-oss-safeguard-20b"
+model_2_name = "gpt-oss-120b"
 
 # custom css
 st.markdown("""
