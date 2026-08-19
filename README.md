@@ -22,8 +22,8 @@ All three outputs are shown in the interface, so the full reasoning trace is vis
 
 ### Models
 
-- **Answerer / Reviser:** Llama 3.1 8B Instant
-- **Critic:** Llama 3.3 70B Versatile
+- **Answerer / Reviser:** openai/gpt-oss-safeguard-20b
+- **Critic:** openai/gpt-oss-120b
 
 The pairing is deliberate: a small, fast model produces the initial answer, and a substantially larger model is used only for the critique step, where deeper reasoning is more likely to be needed. This keeps the pipeline fast and inexpensive for the step that runs regardless of outcome, while reserving the more capable model for the step where catching subtle errors actually matters.
 
