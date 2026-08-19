@@ -56,13 +56,13 @@ Instructions:
 # initializing the first model
 model_1 = init_chat_model(
     model_provider="groq",
-    model="llama-3.1-8b-instant"
+    model="openai/gpt-oss-safeguard-20b"
 )
 
 # intializing the second model
 model_2 = init_chat_model(
     model_provider="groq",
-    model="llama-3.3-70b-versatile"
+    model="openai/gpt-oss-120b"
 )
 
 # building first chain for model_1
